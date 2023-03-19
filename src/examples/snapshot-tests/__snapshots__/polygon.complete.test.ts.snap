@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Polygon > should match the snapshot 1`] = `
+{
+  "area": 482.842712474619,
+  "lengthOfSides": 10,
+  "perimeter": 80,
+  "sides": 8,
+  "sumOfAngles": 1080,
+}
+`;

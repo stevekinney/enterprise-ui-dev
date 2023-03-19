@@ -1,0 +1,2 @@
+- Check for an entry to the changelog in every pull request unless it has `#trivial` somwhere in the PR title or body.
+- Make sure a new test file (e.g. `do-something.test.ts`) is created for every new utility file (e.g. `do-something.ts`).

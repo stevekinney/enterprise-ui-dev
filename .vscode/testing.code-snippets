@@ -1,0 +1,36 @@
+{
+  "Test Suite": {
+    "prefix": "dsc",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "body": ["describe('${1:test suite}', () => {", "  $0", "});"],
+    "description": "Describe"
+  },
+  "Test Case": {
+    "prefix": "tst",
+    "scope": "javascript,typescript",
+    "body": [
+      "${1|test,it|}('${2:description}', ${3:async }() => {",
+      "  $0",
+      "});"
+    ],
+    "description": "Test Case"
+  },
+  "Expect": {
+    "prefix": "xp",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "body": ["expect($1).${2:toBe}($3);"],
+    "description": "Expect"
+  },
+  "Import": {
+    "prefix": "imp",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "body": ["import { $0 } from '${1}';"],
+    "description": "Set ups an import statement"
+  },
+  "Import (Default)": {
+    "prefix": "imd",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "body": ["import $0 from '${1}';"],
+    "description": "Set ups an import statement"
+  }
+}

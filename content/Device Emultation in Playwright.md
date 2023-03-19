@@ -1,0 +1,1 @@
+- [ ] [Device Emulation in Playwright](https://playwright.dev/docs/emulation).

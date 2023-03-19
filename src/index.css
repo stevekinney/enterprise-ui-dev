@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  @apply mx-auto h-screen w-screen max-w-7xl py-8 md:px-16;
+}
+
+*,
+html,
+body {
+  @apply box-border;
+}
+
+html,
+body {
+  @apply mx-0 mb-8 w-screen;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold leading-tight first:mt-0;
+}
+
+h1 {
+  @apply text-4xl leading-tight;
+}
+
+header h1 {
+  @apply underline decoration-primary-400 decoration-4 underline-offset-4;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+h4 {
+  @apply text-xl;
+}
+
+h5 {
+  @apply text-lg;
+}
+
+h6 {
+  @apply text-base;
+}
+
+p,
+ul,
+ol,
+dl {
+  @apply leading-relaxed;
+}
+
+input {
+  @apply border-2 border-primary-700 bg-primary-50 p-2 placeholder-primary-400 accent-primary-600 shadow-sm outline-none transition-all ease-in out-of-range:border-error-800 out-of-range:bg-error-200 hover:bg-primary-100 hover:accent-primary-700 focus:bg-primary-100 disabled:border-slate-500 disabled:bg-slate-100 disabled:placeholder-slate-400;
+}
+
+form[data-validate] input {
+  @apply invalid:border-error-500;
+}
+
+button,
+input[type='button'],
+input[type='reset'] {
+  @apply btn-secondary;
+}
+
+button[type='submit'],
+input[type='submit'] {
+  @apply btn-primary;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  @apply hover:accent-primary-700;
+}
+
+input[type='range'] {
+  @apply h-2 w-full cursor-pointer appearance-none rounded-lg bg-primary-100;
+}
+
+input[type='color'] {
+  @apply h-12 p-1;
+}
+
+input[type='file']::-webkit-file-upload-button {
+  @apply placeholder-error-400 accent-error-800;
+}
+
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='week'],
+input[type='time'] {
+  @apply text-primary-900;
+}
+
+label {
+  @apply font-semibold;
+}
+
+input + label {
+  @apply font-semibold text-primary-900 transition-colors hover:text-primary-800;
+}
+
+select {
+  @apply block w-full rounded border-2 border-purple-700 px-4 py-2 pr-8 shadow hover:bg-primary-200 hover:accent-primary-700 focus:bg-primary-50 focus:outline-none disabled:border-slate-500 disabled:bg-slate-100 disabled:placeholder-slate-400;
+}
+
+.flex > input + button[type='submit'] {
+  @apply whitespace-nowrap rounded-l-none border-l-0;
+}
+
+dt {
+  @apply font-semibold text-primary-800;
+}
+
+dd {
+  @apply text-primary-500;
+}

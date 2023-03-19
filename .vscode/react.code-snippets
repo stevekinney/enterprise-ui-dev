@@ -1,0 +1,66 @@
+{
+  "Create React Component": {
+    "prefix": "crc",
+    "scope": "javascriptreact,typescriptreact",
+    "body": [
+      "type ${3} = {",
+      "  ${4}",
+      "};",
+      "",
+      "const ${1:Component} = (${2:props}: ${3:PropType}) => {",
+      "  return (",
+      "    $0",
+      "  );",
+      "};",
+      "",
+      "export default ${1};"
+    ],
+    "description": "Create React Component"
+  },
+  "event.preventDefault()": {
+    "prefix": "epd",
+    "scope": "javascriptreact,typescriptreact",
+    "body": ["(${1:e}) => { ${1}.preventDefault();${0} }"],
+    "description": "Event: Prevent Default"
+  },
+  "event.target.value": {
+    "prefix": "etv",
+    "scope": "javascriptreact,typescriptreact",
+    "body": ["(${1:e}) => { ${2:console.log}(${1}.target.value);${0} }"],
+    "description": "event.target.value"
+  },
+  "useState()": {
+    "prefix": "us",
+    "scope": "javascriptreact,typescriptreact",
+    "body": [
+      "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState($2);",
+      "$0"
+    ],
+    "description": "useState()"
+  },
+  "useReducer": {
+    "prefix": "ur",
+    "body": ["const [$1, dispatch] = useReducer($2${3:, initialState});"],
+    "description": "useReducer"
+  },
+  "Label and Input": {
+    "prefix": "lai",
+    "scope": "javascriptreact,typescriptreact",
+    "body": [
+      "<label htmlFor=\\\"${1}\\\">${2}</label>",
+      "<input id=\"${1}\" value={${3}} placeholder=\"${2}\" onChange={(e) => { ${4}(e.target.value) }} />"
+    ],
+    "description": "Label and Input"
+  },
+  "Label and Input (Wrapped)": {
+    "prefix": "lad",
+    "scope": "javascriptreact,typescriptreact",
+    "body": [
+      "<${5:div} ${6:className=\"${7:flex}\"}>",
+      "  <label htmlFor=\\\"${1}\\\">${2}</label>",
+      "  <input id=\"${1}\" value={${3}} placeholder=\"${2}\" onChange={(e) => { ${4}(e.target.value) }} />",
+      "<${5}>"
+    ],
+    "description": "Label and Input (Wrapped)"
+  }
+}

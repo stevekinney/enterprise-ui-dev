@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "test:svelte": "vitest -c vitest.config.svelte.js"
+  }
+}

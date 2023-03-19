@@ -1,0 +1,1 @@
+- [`lint-staged` examples](https://github.com/okonet/lint-staged#examples)
