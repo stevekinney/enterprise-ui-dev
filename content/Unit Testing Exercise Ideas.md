@@ -1,0 +1,5 @@
+- A simplified version of the query builder from the Temporal UI
+- Connect Four
+- Game of War
+- A food ordering app (e.g. Toast)
+- [RealWorld](https://github.com/gothinkster/realworld)

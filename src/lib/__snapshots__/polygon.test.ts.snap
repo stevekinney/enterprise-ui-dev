@@ -1,0 +1,81 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`'decagon' > should generate JSON that matches the snapshot 1`] = `
+{
+  "area": 769.4208842938134,
+  "lengthOfSides": 10,
+  "perimeter": 100,
+  "sides": 10,
+  "sumOfAngles": 1440,
+}
+`;
+
+exports[`'heptagon' > should generate JSON that matches the snapshot 1`] = `
+{
+  "area": 363.39124440015894,
+  "lengthOfSides": 10,
+  "perimeter": 70,
+  "sides": 7,
+  "sumOfAngles": 900,
+}
+`;
+
+exports[`'hexagon' > should generate JSON that matches the snapshot 1`] = `
+{
+  "area": 259.8076211353316,
+  "lengthOfSides": 10,
+  "perimeter": 60,
+  "sides": 6,
+  "sumOfAngles": 720,
+}
+`;
+
+exports[`'nonagon' > should generate JSON that matches the snapshot 1`] = `
+{
+  "area": 618.1824193772901,
+  "lengthOfSides": 10,
+  "perimeter": 90,
+  "sides": 9,
+  "sumOfAngles": 1260,
+}
+`;
+
+exports[`'octagon' > should generate JSON that matches the snapshot 1`] = `
+{
+  "area": 482.842712474619,
+  "lengthOfSides": 10,
+  "perimeter": 80,
+  "sides": 8,
+  "sumOfAngles": 1080,
+}
+`;
+
+exports[`'pentagon' > should generate JSON that matches the snapshot 1`] = `
+{
+  "area": 172.04774005889672,
+  "lengthOfSides": 10,
+  "perimeter": 50,
+  "sides": 5,
+  "sumOfAngles": 540,
+}
+`;
+
+exports[`'quadrilateral' > should generate JSON that matches the snapshot 1`] = `
+{
+  "area": 100.00000000000001,
+  "lengthOfSides": 10,
+  "perimeter": 40,
+  "sides": 4,
+  "sumOfAngles": 360,
+}
+`;
+
+exports[`'triangle' > should generate JSON that matches the snapshot 1`] = `
+{
+  "area": 43.301270189221945,
+  "lengthOfSides": 10,
+  "perimeter": 30,
+  "sides": 3,
+  "sumOfAngles": 180,
+}
+`;
