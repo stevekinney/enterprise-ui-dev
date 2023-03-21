@@ -7,7 +7,7 @@ What is this course all about? What do you need? What technologies are we going 
 - [Introduction](content/Introduction.md)
 - [Components of Large Application](content/Components%20of%20Large%20Application.md)
 
-# Unit Testing: Act I
+# Unit Testing
 
 ## Testing Philosophy
 
@@ -80,4 +80,4 @@ Testing functions is all well and good, but what about mounting entire component
 # Storing Artifacts Using Github Actions
 
 - [Generating Artifacts Using Github Actions](content/Generating%20Artifacts%20Using%20Github%20Actions.md)
-- Exercise: [Generating an Artifact for Your Code Coverage Report](content/Generating%20Artifacts%20Using%20Github%20Actions#Exercise.md) and a [[Generating an Artifact for Your Code Coverage Report|Solution](content/Generating%20an%20Artifact%20for%20Your%20Code%20Coverage%20Report.md)
+- Exercise: [Generating an Artifact for Your Code Coverage Report](content/Generating%20Artifacts%20Using%20Github%20Actions#Exercise.md) and a [Solution](content/Generating%20an%20Artifact%20for%20Your%20Code%20Coverage%20Report.md)
