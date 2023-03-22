@@ -12,7 +12,6 @@ export default defineConfig({
     },
   },
   test: {
-    globals: true,
     exclude: [...defaultExclude, '**/*.svelte**'],
     setupFiles: path.resolve(__dirname, '../../../test/setup.ts'),
     environmentMatchGlobs: [

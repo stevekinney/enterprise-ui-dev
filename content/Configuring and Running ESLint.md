@@ -23,6 +23,10 @@ This will ask you a few questions:
 
 I'll let you answer those questions as you see fit. It's your enterprise application—you do what you want.
 
+# Setting Up a Rule
+
+Let's take look at [this rule](https://eslint.org/docs/latest/rules/no-console).
+
 # Further Reading
 
 - [Command Line Interface Reference - ESLint - Pluggable JavaScript Linter](https://eslint.org/docs/latest/use/command-line-interface)
