@@ -19,3 +19,14 @@ jobs:
       - name: Checkout and Setup Node
         uses: ./.github/actions/checkout-and-setup
       - run: npm run build
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout and Setup Node
+        uses: ./.github/actions/checkout-and-setup
+      - run: npm test -- --coverage
+      - uses: actions/upload-artifact@v3
+        name: Archive coverage report
+        with:
+          name: coverage-report
+          path: coverage
