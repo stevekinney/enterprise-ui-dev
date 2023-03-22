@@ -1,5 +1,8 @@
 {
   "scripts": {
     "test": "vitest"
+  },
+  "devDependencies": {
+    "msw": "^1.2.0"
   }
 }

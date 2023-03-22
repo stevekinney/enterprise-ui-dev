@@ -89,12 +89,10 @@ Testing functions is all well and good, but what about mounting entire component
 - [Faking Time](../content/Faking%20Time.md)
 - [Clearing, Restoring, and Reseting Mocks and Spies](../content/Clearing,%20Restoring,%20and%20Reseting%20Mocks%20and%20Spies.md)
 - [Mocking Imports and Modules](../content/Mocking%20Imports%20and%20Modules.md)
-- [Mocks Directory](../content/Mocks%20Directory.md)
 - A Word on [Dependency Injection](../content/Dependency%20Injection.md)
 - [Mocking Globals](../content/Mocking%20Globals.md)
 - [Mocking Environment Variables](../content/Mocking%20Environment%20Variables.md)
 - [Mocking APIs](../content/Mocking%20APIs.md)
-- [Mock Service Worker](../content/Mock%20Service%20Worker.md)
 
 # Integration Testing with Playwright
 
