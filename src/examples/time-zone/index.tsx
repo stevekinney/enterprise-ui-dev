@@ -1,6 +1,5 @@
-import Frame from '$components/frame';
-import { pluralize } from '$lib/pluralize';
 import { useEffect, useRef, useState } from 'react';
+import Frame from '$components/frame';
 import { getTasksFromApi } from './get-tasks-from-api';
 import TaskList, { Task } from './tasks';
 
