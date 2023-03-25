@@ -8,6 +8,10 @@ test('works witn "test" as well', () => {
   expect(false).not.toBe(true);
 });
 
+test('works witn "test" Life is good', () => {
+  expect(false).not.toBe(true);
+});
+
 it.fails('should be able to expect a test to fail', () => {
   expect(false).toBe(true);
 });
