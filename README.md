@@ -67,7 +67,7 @@ Testing functions is all well and good, but what about mounting entire component
 - [Creating a Helper for Rendering Components and User Events](content/Creating%20a%20Helper%20for%20Rendering%20Components%20and%20User%20Events.md)
 - Exercise: [Packing List Component Testing](content/Packing%20List%20Component%20Testing%20Exercise.md) and [Solution](content/Component%20Testing%20Solution.md)
 - Bonus Exercise: [Obstacle Course](content/Obstacle%20Course.md)
-- [Working with Contexts and Redux](content/Working%20with%20Contexts%20and%20Redux.md) and [Exercise](Working%20with%20Contexts%20and%20Redux.md#Exercise)
+- [Working with Contexts and Redux](content/Working%20with%20Contexts%20and%20Redux.md) and [Exercise](content/Working%20with%20Contexts%20and%20Redux.md#Exercise)
 
 ## Testing for Accessibility
 
@@ -80,19 +80,19 @@ Testing functions is all well and good, but what about mounting entire component
 # Storing Artifacts Using Github Actions
 
 - [Generating Artifacts Using Github Actions](content/Generating%20Artifacts%20Using%20Github%20Actions.md)
-- Exercise: [Generating an Artifact for Your Code Coverage Report](content/Generating%20Artifacts%20Using%20Github%20Actions#Exercise.md) and a [Solution](content/Generating%20an%20Artifact%20for%20Your%20Code%20Coverage%20Report.md)
+- Exercise: [Generating an Artifact for Your Code Coverage Report](content/Generating%20Artifacts%20Using%20Github%20Actions.md#Exercise) and a [Solution](content/Generating%20an%20Artifact%20for%20Your%20Code%20Coverage%20Report.md)
 
 # Mocking and Spying
 
-- [Mocks](../content/Mocks.md)
-- [Spies](../content/Spies.md)
-- [Faking Time](../content/Faking%20Time.md)
-- [Clearing, Restoring, and Reseting Mocks and Spies](../content/Clearing,%20Restoring,%20and%20Reseting%20Mocks%20and%20Spies.md)
-- [Mocking Imports and Modules](../content/Mocking%20Imports%20and%20Modules.md)
-- A Word on [Dependency Injection](../content/Dependency%20Injection.md)
-- [Mocking Globals](../content/Mocking%20Globals.md)
-- [Mocking Environment Variables](../content/Mocking%20Environment%20Variables.md)
-- [Mocking APIs](../content/Mocking%20APIs.md)
+- [Mocks](content/Mocks.md)
+- [Spies](content/Spies.md)
+- [Faking Time](content/Faking%20Time.md)
+- [Clearing, Restoring, and Reseting Mocks and Spies](content/Clearing,%20Restoring,%20and%20Reseting%20Mocks%20and%20Spies.md)
+- [Mocking Imports and Modules](content/Mocking%20Imports%20and%20Modules.md)
+- A Word on [Dependency Injection](content/Dependency%20Injection.md)
+- [Mocking Globals](content/Mocking%20Globals.md)
+- [Mocking Environment Variables](content/Mocking%20Environment%20Variables.md)
+- [Mocking APIs](content/Mocking%20APIs.md)
 
 # Integration Testing with Playwright
 
@@ -104,7 +104,7 @@ Testing functions is all well and good, but what about mounting entire component
 - Exercise: Store an Artifact for Your Playwright Tests
 - Experiment: Get computed style for a DOM node
 - [Mocking Routes in Playwright](https://playwright.dev/docs/mock)
-- [[Recording Network Requests with Playwright]]
+- [Recording Network Requests with Playwright](content/Recording%20Network%20Requests%20with%20Playwright.md)
 
 # Enforcing Standards
 
@@ -112,5 +112,5 @@ Testing functions is all well and good, but what about mounting entire component
 - [Configuring and Running ESLint](content/Configuring%20and%20Running%20ESLint.md)
 - [Custom Rules for ESLint](content/Custom%20Rules%20for%20ESLint.md)
 - Exercise: Set Up a Job for Checking Lint and Prettier Rules
-- [[Husky, Lint-Staged, and Git Hooks](content/Husky,%20Lint-Staged,%20and%20Git%20Hooks.md)
+- [Husky, Lint-Staged, and Git Hooks](content/Husky,%20Lint-Staged,%20and%20Git%20Hooks.md)
 - [Creating a Reusable Github Action](content/Creating%20a%20Reusable%20Github%20Action.md)
