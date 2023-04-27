@@ -58,8 +58,8 @@ Okay, so what's going on here:
 
 ![](../assets/your-first-actions.png)
 
-# Experiments
+# Exercise: Add a Build Step
 
-- Right now `build-and-test` only tests. Maybe it should build first?
-- Could you add a name to the step where we check out the repository? What would that look like?
-- **Challenge Mode**: What if wanted to run `npm run build` in parallel with `npm test`?
+- Right now `build-and-test` only tests. Add a step that runs `npm run build` to the action
+- **Bonus 1:**: Add a name to the step where we check out the repository.
+- **Bonus 2:**: Run `npm run build` in parallel with `npm test`.
