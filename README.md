@@ -1,5 +1,9 @@
 ![](assets/enterprise-user-interface-development.png)
 
+# Frontend Masters Course
+
+This repository is a companion website to the [Frontend Masters](https://frontendmasters.com) course [Enterprise UI Development](https://frontendmasters.com/courses/enterprise-ui-dev).
+
 # Introduction
 
 What is this course all about? What do you need? What technologies are we going to be using? What do I need to have installed?
