@@ -1,0 +1,17 @@
+name: Prettier
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup nodejs
+        uses: actions/setup-node@v3
+      - run: npm run format:check
