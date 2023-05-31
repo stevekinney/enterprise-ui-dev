@@ -3,3 +3,9 @@ https://github.com/andylan02/enterprise-ui-dev/commit/andyDev
 
 Unit Test Result(Actions):
 https://github.com/andylan02/enterprise-ui-dev/actions
+
+Github host:
+https://gitlab.com/ineo6/hosts/-/raw/master/next-hosts
+
+https://github.com/ineo6/hosts
+https://segmentfault.com/a/1190000041466088
