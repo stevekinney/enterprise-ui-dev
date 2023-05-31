@@ -24,11 +24,24 @@ test('it should render the component with an initial count', () => {
   expect(currentCount).toHaveTextContent('400');
 });
 
-test('it should reset the count when the "Reset" button is pressed', async () => {
+test.only('it should reset the count when the "Reset" button is pressed', async () => {
   const { user } = render(<Counter initialCount={400} />);
 
+  const header = screen.getByText(/Gitastrophe™/);
+  // const header2 = screen.getByText('Gitastrophe');
+  const header3 = screen.getByText(/Gitastrophe/);
+
   const currentCount = screen.getByTestId('current-count');
-  const resetButton = screen.getByRole('button', { name: 'Reset' });
+  const incrementButton = screen.getByRole('button', { name: /increment/i });
+
+  await user.click(incrementButton);
+  expect(currentCount).toHaveTextContent('401');
+  await user.click(incrementButton);
+  expect(currentCount).toHaveTextContent('402');
+
+  
+  // const resetButton = screen.getByRole('button', { name: 'Reset' });
+  const resetButton = screen.getByRole('button', { name: /reset/i });
 
   await user.click(resetButton);
 
