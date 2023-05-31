@@ -1,4 +1,4 @@
-name: Unit Tests
+name: Run Unit Tests
 
 on:
   push:
@@ -9,20 +9,40 @@ on:
 jobs:
   unit-test:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
+        name: Checkout Repository 🫠
       - name: Setup Node
         uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
       - run: npm ci
       - run: npm test
-
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
       - name: Setup Node
         uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
       - run: npm ci
       - run: npm run build
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      - run: npm ci
+      - run: npm test -- --coverage --run
+      - uses: actions/upload-artifact@v3
+        name: Archive coverage report
+        with:
+          name: coverage-report
+          path: coverage
