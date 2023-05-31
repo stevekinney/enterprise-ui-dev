@@ -14,7 +14,7 @@ const renderCounter = (initialCount: number) => {
   return { user, currentCount, incrementButton };
 };
 
-test.only('it should reset the count when the "Reset" button is pressed', async () => {
+test('it should reset the count when the "Reset" button is pressed', async () => {
   const { user, currentCount, incrementButton } = renderCounter(400);
 
   await user.click(incrementButton);
