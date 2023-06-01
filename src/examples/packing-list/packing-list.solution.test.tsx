@@ -47,6 +47,20 @@ it('adds a new item to the unpacked item list when the clicking "Add New Item"',
   expect(screen.getByLabelText('MacBook Pro')).not.toBeChecked();
 });
 
+//TestingLibraryElementError: Found multiple elements with the text of: MacBook Pro
+/*it('duplicated adds a new item to the unpacked item list when the clicking "Add New Item"', async () => {
+  const { user } = render(<PackingList />);
+  const newItemInput = screen.getByLabelText<HTMLInputElement>('New Item Name');
+  const addNewItemButton = screen.getByRole<HTMLButtonElement>('button', {
+    name: 'Add New Item',
+  });
+
+  await user.type(newItemInput, 'MacBook Pro');
+  await user.click(addNewItemButton);
+
+  expect(screen.getByLabelText('MacBook Pro')).not.toBeChecked();
+});*/
+
 // This test is sublty flawed.
 it('removes an item when the remove button is clicked', async () => {
   const { user } = render(<PackingList />);
