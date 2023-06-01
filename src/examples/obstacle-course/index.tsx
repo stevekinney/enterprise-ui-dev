@@ -180,6 +180,7 @@ const ObstacleCourse = () => {
       </div>
       <div className="flex items-center gap-2 border-2 border-purple-300 p-2">
         <label htmlFor="resume">Résumé</label>
+        {/*<input />*/}
         <input
           type="file"
           name="resume"

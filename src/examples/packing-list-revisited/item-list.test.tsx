@@ -5,7 +5,7 @@ import ItemList from './item-list';
 import { store } from './store';
 import { add } from './store/items-slice';
 
-//Compare with renderWithWrapperProviderStore
+//Compare with renderTestWrapper
 it('should render', async () => {
   render(<ItemList title="Unpacked Items" packed={false} />, {
     wrapper: ({ children }: PropsWithChildren) => (

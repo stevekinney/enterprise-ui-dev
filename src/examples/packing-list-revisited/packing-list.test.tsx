@@ -4,10 +4,7 @@ import { Provider } from 'react-redux';
 import { PropsWithChildren } from 'react';
 import { createStore } from './store';
 
-const renderWithWrapperProviderStore: typeof baseRender = (
-  Component,
-  options,
-) => {
+const renderTestWrapper: typeof baseRender = (Component, options) => {
   const store = createStore();
 
   const Wrapper = ({ children }: PropsWithChildren) => {
@@ -18,21 +15,21 @@ const renderWithWrapperProviderStore: typeof baseRender = (
 };
 
 it('renders the Packing List PackingList', () => {
-  renderWithWrapperProviderStore(<PackingList />);
+  renderTestWrapper(<PackingList />);
 });
 
 it('has the correct title', async () => {
-  renderWithWrapperProviderStore(<PackingList />);
+  renderTestWrapper(<PackingList />);
   screen.getByText('Packing List');
 });
 
 it('has an input field for a new item', () => {
-  renderWithWrapperProviderStore(<PackingList />);
+  renderTestWrapper(<PackingList />);
   screen.getByLabelText('New Item Name');
 });
 
 it('has a "Add New Item" button that is disabled when the input is empty', () => {
-  renderWithWrapperProviderStore(<PackingList />);
+  renderTestWrapper(<PackingList />);
   const newItemInput = screen.getByLabelText('New Item Name');
   const addNewItemButton = screen.getByRole('button', { name: 'Add New Item' });
 
@@ -41,7 +38,7 @@ it('has a "Add New Item" button that is disabled when the input is empty', () =>
 });
 
 it('enables the "Add New Item" button when there is text in the input field', async () => {
-  const { user } = renderWithWrapperProviderStore(<PackingList />);
+  const { user } = renderTestWrapper(<PackingList />);
   const newItemInput = screen.getByLabelText<HTMLInputElement>('New Item Name');
   const addNewItemButton = screen.getByRole('button', { name: 'Add New Item' });
 
@@ -51,7 +48,7 @@ it('enables the "Add New Item" button when there is text in the input field', as
 });
 
 it('adds a new item to the unpacked item list when the clicking "Add New Item"', async () => {
-  const { user } = renderWithWrapperProviderStore(<PackingList />);
+  const { user } = renderTestWrapper(<PackingList />);
   const newItemInput = screen.getByLabelText<HTMLInputElement>('New Item Name');
   const addNewItemButton = screen.getByRole<HTMLButtonElement>('button', {
     name: 'Add New Item',
@@ -66,7 +63,7 @@ it('adds a new item to the unpacked item list when the clicking "Add New Item"',
 //With Wrapper <Provider store={store}>{children}</Provider>
 //Duplicated add case with add same MacBook Pro work now
 it('duplicated adds a new item to the unpacked item list when the clicking "Add New Item"', async () => {
-  const { user } = renderWithWrapperProviderStore(<PackingList />);
+  const { user } = renderTestWrapper(<PackingList />);
   const newItemInput = screen.getByLabelText<HTMLInputElement>('New Item Name');
   const addNewItemButton = screen.getByRole<HTMLButtonElement>('button', {
     name: 'Add New Item',
@@ -80,7 +77,7 @@ it('duplicated adds a new item to the unpacked item list when the clicking "Add 
 
 // This test is sublty flawed.
 it('removes an item when the remove button is clicked', async () => {
-  const { user } = renderWithWrapperProviderStore(<PackingList />);
+  const { user } = renderTestWrapper(<PackingList />);
 
   const newItemInput = screen.getByLabelText<HTMLInputElement>('New Item Name');
   const addNewItemButton = screen.getByRole<HTMLButtonElement>('button', {
