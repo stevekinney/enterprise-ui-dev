@@ -137,7 +137,7 @@ describe('Person', () => {
 
     expect.hasAssertions();
 
-    // Verify that john.friends does not inclide paul.
+    // Verify that john.friends does not include paul.
   });
 
   it.todo('will mutually remove friends', () => {
