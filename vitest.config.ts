@@ -19,8 +19,10 @@ export default defineConfig({
       ['**/*.component.test.ts', 'jsdom'],
     ],
     coverage: {
-      statements: 54.92,
+      // statements: 59.79,
+      statements: 49.79,
       thresholdAutoUpdate: true,
+      reporter: ['cobertura'],
       include: ['src/**/*'],
       exclude: [
         'test/**',

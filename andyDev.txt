@@ -1,0 +1,23 @@
+commit:
+https://github.com/andylan02/enterprise-ui-dev/commit/andyDev
+
+Unit Test Result(Actions):
+https://github.com/andylan02/enterprise-ui-dev/actions
+
+Github host:
+https://gitlab.com/ineo6/hosts/-/raw/master/next-hosts
+
+https://github.com/ineo6/hosts
+https://segmentfault.com/a/1190000041466088
+
+
+ npm test .\counter.exercise -- --coverage --run
+
+11 npm install
+12 npm test
+13 npm test exercise
+14 npm run test:svelte
+15 npm start
+16 npx vitest
+20 npm run build
+21 ipconfig /flushdns

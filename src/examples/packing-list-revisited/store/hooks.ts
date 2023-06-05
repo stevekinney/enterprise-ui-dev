@@ -1,15 +1,14 @@
-import { useSelector, useDispatch as useReduxDispatch } from 'react-redux';
 import type { Item } from './items-slice';
-import type { ApplicationState, ApplicationDispatch } from '.';
+import { useAppSelector } from '.';
 
 export const useAllItems = (): Item[] => {
-  return useSelector<ApplicationState, Item[]>((state) =>
-    Object.values(state.items),
-  );
+  // return useAppSelector<ApplicationState, Item[]>((state) =>
+  return useAppSelector((state) => Object.values(state.items));
 };
 
 export const useItems = (packed: boolean): Item[] => {
-  return useSelector<ApplicationState, Item[]>((state) =>
+  // return useSelector<ApplicationState, Item[]>((state) =>
+  return useAppSelector((state) =>
     Object.values(state.items).filter((item) => item.packed === packed),
   );
 };
@@ -19,7 +18,8 @@ export const useItemIds = (packed: boolean): string[] => {
 };
 
 export const useItem = (id: string): Item => {
-  return useSelector<ApplicationState, Item>((state) => state.items[id]);
+  // return useSelector<ApplicationState, Item>((state) => state.items[id]);
+  return useAppSelector((state) => state.items[id]);
 };
 
-export const useDispatch: () => ApplicationDispatch = useReduxDispatch;
+// export const useDispatch: () => ApplicationDispatch = useReduxDispatch;

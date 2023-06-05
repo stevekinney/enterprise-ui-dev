@@ -20,4 +20,9 @@ export class KanbanBoard {
   removeStatus(status: string) {
     this.statuses.splice(this.statuses.indexOf(status));
   }
+
+  async asyncRemoveStatus(status: string) {
+    this.statuses.splice(this.statuses.indexOf(status));
+    return 4;
+  }
 }

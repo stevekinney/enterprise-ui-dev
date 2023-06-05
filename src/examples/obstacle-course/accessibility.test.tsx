@@ -8,5 +8,6 @@ it('should demonstrate this matcher`s usage', async () => {
   const { container } = render(<ObstacleCourse />);
   const results = await axe(container);
 
+  //Like <input /> would with violations
   expect(results).toHaveNoViolations();
 });

@@ -1,0 +1,16 @@
+import { setupWorker, rest } from 'msw';
+
+const worker = setupWorker(
+  rest.post('/login', async (req, res, ctx) => {
+    const { username } = await req.json();
+
+    return res(
+      ctx.json({
+        username,
+        firstName: 'John',
+      }),
+    );
+  }),
+);
+
+worker.start();
