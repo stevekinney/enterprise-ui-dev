@@ -1,17 +1,15 @@
-import { useDispatch } from './../packing-list-revisited/store/hooks';
 import { test, expect, vi } from 'vitest';
 import { log } from './log';
-import { useSelector } from 'react-redux';
 
 // requestFromApi('/');
-vi.mock('react-redux', (args) => {
+/*vi.mock('react-redux', (args) => {
   return {
     useDispatch() {
       return {};
     },
     useSelector() {},
   };
-});
+});*/
 
 test('it spies on the multiply method', () => {
   const mock = vi.fn((x?: string) => {
