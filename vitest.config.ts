@@ -21,6 +21,7 @@ export default defineConfig({
     coverage: {
       statements: 59.79,
       thresholdAutoUpdate: true,
+      reporter: ['cobertura'],
       include: ['src/**/*'],
       exclude: [
         'test/**',

@@ -9,7 +9,7 @@ type ItemsProps = {
 
 const ItemList = ({ title, packed }: ItemsProps) => {
   const id = toKebabCase(title);
-  const itemIds: string[] = useItemIds(packed);
+  const itemIds = useItemIds(packed);
 
   return (
     <section
