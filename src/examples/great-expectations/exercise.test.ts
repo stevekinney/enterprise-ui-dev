@@ -72,25 +72,28 @@ describe('Kanban Board', () => {
 });
 
 describe('Person', () => {
-  it.todo('will create a person with a first name', () => {
+  it('will create a person with a first name', () => {
     const person = new Person('Madonna');
     expect.hasAssertions();
     // Verify that person.firstName is correct.
+    expect(person.firstName).toBe('Madonna')
   });
 
-  it.todo('will create a person with a first and last name', () => {
+  it('will create a person with a first and last name', () => {
     const person = new Person('Madonna Cicone');
     expect.hasAssertions();
     // Verify that person.lastName is correct.
+    expect(person.lastName).toBe('Cicone')
   });
 
-  it.todo('will create a person with a first, middle, and last name', () => {
+  it('will create a person with a first, middle, and last name', () => {
     const person = new Person('Madonna Louise Cicone');
     expect.hasAssertions();
     // Verify that person.middleName is correct.
+    expect(person.middleName).toBe('Louise')
   });
 
-  it.todo('will throw if you provide an empty string', () => {
+  it('will throw if you provide an empty string', () => {
     const fn = () => {
       new Person('');
     };
@@ -98,12 +101,14 @@ describe('Person', () => {
     expect.hasAssertions();
 
     // Verify that function above throws.
+    // .toThrowError() can pass in part of the expected string
+    expect(fn).toThrowError('empty string')
   });
 
-  it.todo(
+  it(
     'will throw a specific error message if you provide an empty string',
     () => {
-      const errorMessage = 'fullName cannot be an empty string';
+      const errorMessage = 'fullName cannot be an empty string.';
 
       const fn = () => {
         new Person('');
@@ -112,10 +117,11 @@ describe('Person', () => {
       expect.hasAssertions();
 
       // Verify that function above throws the error message above.
+      expect(fn).toThrowError(/^fullName cannot be an empty string.$/)
     },
   );
 
-  it.todo('will add a friend', () => {
+  it('will add a friend', () => {
     const john = new Person('John Lennon');
     const paul = new Person('Paul McCartney');
 
@@ -124,9 +130,10 @@ describe('Person', () => {
     expect.hasAssertions();
 
     // Verify that john.friends contains paul.
+    expect(john.friends).toContain(paul)
   });
 
-  it.todo('will mutually add a friend', () => {
+  it('will mutually add a friend', () => {
     const john = new Person('John Lennon');
     const paul = new Person('Paul McCartney');
 
@@ -135,9 +142,10 @@ describe('Person', () => {
     expect.hasAssertions();
 
     // Verify that paul.friends contains john.
+    expect(paul.friends).toContain(john)
   });
 
-  it.todo('will remove a friend', () => {
+  it('will remove a friend', () => {
     const john = new Person('John Lennon');
     const paul = new Person('Paul McCartney');
 
@@ -147,9 +155,10 @@ describe('Person', () => {
     expect.hasAssertions();
 
     // Verify that john.friends does not inclide paul.
+    expect(john.friends).not.toContain(paul)
   });
 
-  it.todo('will mutually remove friends', () => {
+  it('will mutually remove friends', () => {
     const john = new Person('John Lennon');
     const paul = new Person('Paul McCartney');
 
@@ -159,6 +168,7 @@ describe('Person', () => {
     expect.hasAssertions();
 
     // Verify that paul.friends does not include john.
+    expect(paul.friends).not.toContain(john)
   });
 });
 
