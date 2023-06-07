@@ -15,4 +15,4 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
       - run: npm ci
-      - run: npm install
+      - run: npm test
