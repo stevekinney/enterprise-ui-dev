@@ -1,5 +1,8 @@
 {
   "scripts": {
     "test": "vitest"
+  },
+  "dependencies": {
+    "vitest": "^0.32.0"
   }
 }

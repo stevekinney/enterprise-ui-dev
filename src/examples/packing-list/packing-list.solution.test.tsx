@@ -47,7 +47,7 @@ it('adds a new item to the unpacked item list when the clicking "Add New Item"',
   expect(screen.getByLabelText('MacBook Pro')).not.toBeChecked();
 });
 
-// This test is sublty flawed.
+// This test is subtly flawed.
 it('removes an item when the remove button is clicked', async () => {
   const { user } = render(<PackingList />);
 

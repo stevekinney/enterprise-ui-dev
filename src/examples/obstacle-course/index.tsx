@@ -1,6 +1,6 @@
 import { useReducer, useState } from 'react';
 
-const avengers = [
+export const avengers = [
   'Iron Man',
   'Black Widow',
   'Thor',
@@ -16,9 +16,9 @@ const toppingsState = {
   Lettuce: false,
 } as const;
 
-const toppings = Object.keys(toppingsState);
+export const toppings = Object.keys(toppingsState);
 
-const beatles = ['John', 'Paul', 'George', 'Ringo'];
+export const beatles = ['John', 'Paul', 'George', 'Ringo'];
 
 type Topping = keyof typeof toppingsState;
 type Beatle = (typeof beatles)[number];
@@ -96,7 +96,7 @@ const ObstacleCourse = () => {
                   checked: e.target.checked,
                 });
               }}
-              data-testid="checkbox-{topping.toLocaleLowerCase()}"
+              data-testid={"checkbox-"+topping.toLocaleLowerCase()}
             />
             <label className="list" htmlFor={topping.toLocaleLowerCase()}>
               {topping}
@@ -119,7 +119,7 @@ const ObstacleCourse = () => {
               id={beatle.toLowerCase()}
               value={beatle}
               onChange={(e) => setFavoriteBeatle(e.target.value)}
-              data-testid="radio-{beatle.toLowerCase()}"
+              data-testid={"radio-"+beatle.toLowerCase()}
             />
             <label className="list" htmlFor={beatle.toLowerCase()}>
               {beatle}

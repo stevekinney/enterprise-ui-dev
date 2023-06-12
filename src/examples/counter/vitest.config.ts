@@ -7,10 +7,16 @@ export default defineConfig({
   resolve: {
     alias: {
       $components: path.resolve(__dirname, '../../components'),
+      test: path.resolve(__dirname, 'test'),
     },
   },
   test: {
     globals: true,
     exclude: [...defaultExclude, '**/*.svelte**'],
+    setupFiles: path.resolve(__dirname, './test/setup.ts'),
+    environmentMatchGlobs: [
+      ['**/*.test.tsx', 'jsdom'],
+      ['**/*.component.test.ts', 'jsdom'],
+    ],
   },
 });
