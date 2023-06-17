@@ -15,6 +15,11 @@
           uses: actions/checkout@v3
         - name: Setup Node
           uses: actions/setup-node@v3
+        - uses: actions/cache@v3
+          id: npm-cache
+          with:
+            path: ~/.npm
+            key: npm-${{ hashFiles('**/package-lock.json') }}
         - run: npm ci
           name: Install modules from npm
         - run: npm run build
@@ -27,6 +32,11 @@
           uses: actions/checkout@v3
         - name: Setup Node
           uses: actions/setup-node@v3
+        - uses: actions/cache@v3
+          id: npm-cache
+          with:
+            path: ~/.npm
+            key: npm-${{ hashFiles('**/package-lock.json') }}
         - run: npm ci
           name: Install modules from npm
         - run: npm test
