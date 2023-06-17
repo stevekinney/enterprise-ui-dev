@@ -1,5 +1,5 @@
 import { beforeEach, describe, it, expect } from 'vitest';
-import { createPolygon, Polygon } from 'src/lib/polygon';
+import { createPolygon, Polygon } from './polygon';
 
 type ContextWithPolygon = {
   polygon: Polygon;

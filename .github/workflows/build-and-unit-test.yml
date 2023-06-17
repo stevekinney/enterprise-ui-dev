@@ -17,5 +17,7 @@
           uses: actions/setup-node@v3
         - run: npm ci
           name: Install modules from npm
+        - run: npm run build
+          name: Build
         - run: npm test
           name: Run the tests
