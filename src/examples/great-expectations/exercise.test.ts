@@ -20,10 +20,9 @@ it.todo(
 );
 
 describe('createPerson', () => {
-  it.todo('should create an instance of a person', () => {
+  it('should create an instance of a person', () => {
     const person = createPerson('Ada Lovelace');
-    expect.hasAssertions();
-    // Verify that person is an instance of a Person.
+    expect(person).toBeInstanceOf(Person);
   });
 });
 
