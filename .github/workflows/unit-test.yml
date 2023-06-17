@@ -7,7 +7,7 @@
       branches: [main]
 
   jobs:
-    unit-test:
+    build-and-unit-test:
       runs-on: ubuntu-latest
 
       steps:
@@ -17,5 +17,7 @@
           uses: actions/setup-node@v3
         - run: npm ci
           name: Install modules from npm
+        - run: npm build
+          name: Build
         - run: npm test
           name: Run the tests
