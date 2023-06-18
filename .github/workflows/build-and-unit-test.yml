@@ -41,3 +41,25 @@
           name: Install modules from npm
         - run: npm test
           name: Run the tests
+    coverage:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v3
+        - name: Setup Node
+          uses: actions/setup-node@v3
+        - uses: actions/cache@v3
+          id: npm-cache
+          with:
+            path: ~/.npm
+            key: npm-${{ hashFiles('**/package-lock.json') }}
+        - run: npm ci
+          name: Install modules from npm
+        - run: npm run coverage
+          name: Generate coverage report
+        - name: Upload coverage report
+          uses: actions/upload-artifact@v3
+          with:
+            name: coverage-report
+            path: coverage
