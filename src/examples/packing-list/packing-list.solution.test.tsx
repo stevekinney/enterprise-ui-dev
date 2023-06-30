@@ -1,4 +1,4 @@
-import { render, screen } from 'test/utilities';
+import { render, screen, waitFor } from 'test/utilities';
 import PackingList from '.';
 
 it('renders the Packing List application', () => {
@@ -13,8 +13,11 @@ it('has the correct title', async () => {
 it('has an input field for a new item', () => {
   render(<PackingList />);
   screen.getByLabelText('New Item Name');
+  // screen.getAllByPlaceholderText('New Item Name');
 });
 
+//Jest https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest
+//Vitest https://marketplace.visualstudio.com/items?itemName=ZixuanChen.vitest-explorer
 it('has a "Add New Item" button that is disabled when the input is empty', () => {
   render(<PackingList />);
   const newItemInput = screen.getByLabelText('New Item Name');
@@ -28,6 +31,9 @@ it('enables the "Add New Item" button when there is text in the input field', as
   const { user } = render(<PackingList />);
   const newItemInput = screen.getByLabelText<HTMLInputElement>('New Item Name');
   const addNewItemButton = screen.getByRole('button', { name: 'Add New Item' });
+
+  expect(newItemInput).toHaveValue('');
+  expect(addNewItemButton).toBeDisabled();
 
   await user.type(newItemInput, 'MacBook Pro');
 
@@ -45,7 +51,28 @@ it('adds a new item to the unpacked item list when the clicking "Add New Item"',
   await user.click(addNewItemButton);
 
   expect(screen.getByLabelText('MacBook Pro')).not.toBeChecked();
+  
+  expect(newItemInput).toHaveValue('');
+  expect(addNewItemButton).toBeDisabled();
 });
+
+//redux store two same item
+it.skip('adds a new item to the unpacked item list when the clicking "Add New Item"', async () => {
+  const { user } = render(<PackingList />);
+  const newItemInput = screen.getByLabelText<HTMLInputElement>('New Item Name');
+  const addNewItemButton = screen.getByRole<HTMLButtonElement>('button', {
+    name: 'Add New Item',
+  });
+
+  await user.type(newItemInput, 'MacBook Pro');
+  await user.click(addNewItemButton);
+
+  expect(screen.getByLabelText('MacBook Pro')).not.toBeChecked();
+  
+  expect(newItemInput).toHaveValue('');
+  expect(addNewItemButton).toBeDisabled();
+});
+
 
 //TestingLibraryElementError: Found multiple elements with the text of: MacBook Pro
 /*it('duplicated adds a new item to the unpacked item list when the clicking "Add New Item"', async () => {
@@ -78,7 +105,12 @@ it('removes an item when the remove button is clicked', async () => {
     name: 'Remove iPad Pro',
   });
 
+  screen.debug();
   await user.click(removeButton);
 
+  expect(removeButton).not.toBeInTheDocument();
+  await waitFor(()=> expect(removeButton).not.toBeInTheDocument());
+
+  expect(removeButton).not.toBeInTheDocument();
   expect(item).not.toBeInTheDocument();
 });
