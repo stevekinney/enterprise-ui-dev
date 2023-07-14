@@ -28,9 +28,9 @@ describe('createPerson', () => {
 });
 
 describe('Kanban Board', () => {
-  it.todo('should include "Backlog" in board.statuses', () => {
+  it('should include "Backlog" in board.statuses', () => {
     const board = new KanbanBoard('Things to Do');
-    expect.hasAssertions();
+    expect(board.statuses).toContain('Backlog')
     // Verify that board.statuses contains "Backlog".
   });
 
