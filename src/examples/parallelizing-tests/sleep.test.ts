@@ -54,3 +54,25 @@ describe.concurrent('concurrent sleep', () => {
     expect(true).toBe(true);
   });
 });
+
+describe.shuffle('shuffle sleep', () => {
+  it('should sleep for 500ms', async ({ expect }) => {
+    await sleep(500);
+    expect(true).toBe(true);
+  });
+
+  it('should sleep for 750ms', async ({ expect }) => {
+    await sleep(750);
+    expect(true).toBe(true);
+  });
+
+  it('should sleep for 1000ms', async ({ expect }) => {
+    await sleep(1000);
+    expect(true).toBe(true);
+  });
+
+  it('should sleep for 1500ms', async ({ expect }) => {
+    await sleep(1500);
+    expect(true).toBe(true);
+  });
+});

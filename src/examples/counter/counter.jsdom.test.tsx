@@ -6,8 +6,6 @@ import userEvent from '@testing-library/user-event';
 import Counter from '.';
 import { render as renderUtil } from './test/utilities.solution';
 
-// @vitest-environment happy-dom
-// @vitest-environment jsdom
 // npm test counter.solution.test.tsx --  --ui
 test('it should render the component', () => {
   screen.debug(document.body);

@@ -4,7 +4,18 @@ import { Provider } from 'react-redux';
 import { PropsWithChildren } from 'react';
 import { createStore } from './store';
 
+/**
+ * So, in our effort to separate things from each other,
+ * we're making good progress. We at least pried the Provider apart from <PackingList />.
+ * But, yo: Provider and store are still jammed together.
+ * Using a Higher Order Component to Provide a Fresh Store
+ *
+ * @param Component
+ * @param options
+ */
 const renderTestWrapper: typeof baseRender = (Component, options) => {
+  //render(<PackingList />, { wrapper: ItemsProvider });
+  //Every case would be a new store
   const store = createStore();
 
   const Wrapper = ({ children }: PropsWithChildren) => {
