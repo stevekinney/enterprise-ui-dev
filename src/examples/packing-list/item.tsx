@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useItem } from './store/hooks';
 import { remove, toggle, update } from './store/items-slice';
@@ -56,4 +56,8 @@ const Item = ({ itemId }: ItemProps) => {
   );
 };
 
-export default Item;
+// export default Item;
+export default React.memo(
+  Item,
+  (oldProps, newProps) => oldProps.itemId === newProps.itemId,
+);

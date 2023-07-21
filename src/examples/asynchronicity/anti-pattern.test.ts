@@ -15,7 +15,7 @@ test('Asynchronous code has zero expectations', () => {
 
 test.fails('Code inside of callback never runs', () => {
   expect.hasAssertions();
-  // expect.assertions(0);
+  expect.assertions(0);
   setTimeout(() => {
     expect(false).toBe(true);
   }, 1000);

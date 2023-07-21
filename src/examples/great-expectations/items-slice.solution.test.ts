@@ -17,7 +17,8 @@ it('supports adding an item with the correct name', () => {
 });
 
 it('prefixes ids with "item-"', () => {
-  expect(reducer([], add({ name: 'iPhone' }))).toEqual([
+  const addOneItem = reducer([], add({ name: 'iPhone' }));
+  expect(addOneItem).toEqual([
     expect.objectContaining({ id: expect.stringMatching(/^item-/) }),
   ]);
 });
