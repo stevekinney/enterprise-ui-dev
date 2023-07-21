@@ -20,9 +20,13 @@ export default defineConfig({
     ],
     coverage: {
       // statements: 59.79,
-      statements: 49.79,
+      //Failure case
+      statements: 55.05,
       thresholdAutoUpdate: true,
-      reporter: ['cobertura'],
+      //html or xml or other type format
+      // reporter: ['cobertura'],
+      reporter: ['html'],
+      // reporter: ['html-spa'],
       include: ['src/**/*'],
       exclude: [
         'test/**',
