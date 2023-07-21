@@ -1,5 +1,16 @@
 import { getArea } from './get-area';
 
+const namedPolygons = {
+  triangle: 3,
+  quadrilateral: 4,
+  pentagon: 5,
+  hexagon: 6,
+  heptagon: 7,
+  octagon: 8,
+  nonagon: 9,
+  decagon: 10,
+} as const;
+
 type PolygonType = keyof typeof namedPolygons;
 type NamedPolygon<T extends PolygonType> = {
   type: T;
@@ -14,17 +25,6 @@ export type Heptagon = NamedPolygon<'heptagon'>;
 export type Octagon = NamedPolygon<'octagon'>;
 export type Nonagon = NamedPolygon<'nonagon'>;
 export type Decagon = NamedPolygon<'decagon'>;
-
-const namedPolygons = {
-  triangle: 3,
-  quadrilateral: 4,
-  pentagon: 5,
-  hexagon: 6,
-  heptagon: 7,
-  octagon: 8,
-  nonagon: 9,
-  decagon: 10,
-} as const;
 
 export class Polygon {
   sides: number;

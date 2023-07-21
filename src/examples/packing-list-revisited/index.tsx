@@ -19,6 +19,7 @@ export const PackingList = () => (
   </Frame>
 );
 
+//For test need split Provider and PackingList
 const Application = () => {
   return (
     <Provider store={store}>

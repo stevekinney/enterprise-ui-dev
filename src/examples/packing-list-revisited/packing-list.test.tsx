@@ -4,7 +4,18 @@ import { Provider } from 'react-redux';
 import { PropsWithChildren } from 'react';
 import { createStore } from './store';
 
-const render: typeof baseRender = (Component, options) => {
+/**
+ * So, in our effort to separate things from each other,
+ * we're making good progress. We at least pried the Provider apart from <PackingList />.
+ * But, yo: Provider and store are still jammed together.
+ * Using a Higher Order Component to Provide a Fresh Store
+ *
+ * @param Component
+ * @param options
+ */
+const renderTestWrapper: typeof baseRender = (Component, options) => {
+  //render(<PackingList />, { wrapper: ItemsProvider });
+  //Every case would be a new store
   const store = createStore();
 
   const Wrapper = ({ children }: PropsWithChildren) => {
@@ -15,21 +26,21 @@ const render: typeof baseRender = (Component, options) => {
 };
 
 it('renders the Packing List PackingList', () => {
-  render(<PackingList />);
+  renderTestWrapper(<PackingList />);
 });
 
 it('has the correct title', async () => {
-  render(<PackingList />);
+  renderTestWrapper(<PackingList />);
   screen.getByText('Packing List');
 });
 
 it('has an input field for a new item', () => {
-  render(<PackingList />);
+  renderTestWrapper(<PackingList />);
   screen.getByLabelText('New Item Name');
 });
 
 it('has a "Add New Item" button that is disabled when the input is empty', () => {
-  render(<PackingList />);
+  renderTestWrapper(<PackingList />);
   const newItemInput = screen.getByLabelText('New Item Name');
   const addNewItemButton = screen.getByRole('button', { name: 'Add New Item' });
 
@@ -38,7 +49,7 @@ it('has a "Add New Item" button that is disabled when the input is empty', () =>
 });
 
 it('enables the "Add New Item" button when there is text in the input field', async () => {
-  const { user } = render(<PackingList />);
+  const { user } = renderTestWrapper(<PackingList />);
   const newItemInput = screen.getByLabelText<HTMLInputElement>('New Item Name');
   const addNewItemButton = screen.getByRole('button', { name: 'Add New Item' });
 
@@ -48,7 +59,22 @@ it('enables the "Add New Item" button when there is text in the input field', as
 });
 
 it('adds a new item to the unpacked item list when the clicking "Add New Item"', async () => {
-  const { user } = render(<PackingList />);
+  const { user } = renderTestWrapper(<PackingList />);
+  const newItemInput = screen.getByLabelText<HTMLInputElement>('New Item Name');
+  const addNewItemButton = screen.getByRole<HTMLButtonElement>('button', {
+    name: 'Add New Item',
+  });
+
+  await user.type(newItemInput, 'MacBook Pro');
+  await user.click(addNewItemButton);
+
+  expect(screen.getByLabelText('MacBook Pro')).not.toBeChecked();
+});
+
+//With Wrapper <Provider store={store}>{children}</Provider>
+//Duplicated add case with add same MacBook Pro work now
+it('duplicated adds a new item to the unpacked item list when the clicking "Add New Item"', async () => {
+  const { user } = renderTestWrapper(<PackingList />);
   const newItemInput = screen.getByLabelText<HTMLInputElement>('New Item Name');
   const addNewItemButton = screen.getByRole<HTMLButtonElement>('button', {
     name: 'Add New Item',
@@ -62,7 +88,7 @@ it('adds a new item to the unpacked item list when the clicking "Add New Item"',
 
 // This test is sublty flawed.
 it('removes an item when the remove button is clicked', async () => {
-  const { user } = render(<PackingList />);
+  const { user } = renderTestWrapper(<PackingList />);
 
   const newItemInput = screen.getByLabelText<HTMLInputElement>('New Item Name');
   const addNewItemButton = screen.getByRole<HTMLButtonElement>('button', {

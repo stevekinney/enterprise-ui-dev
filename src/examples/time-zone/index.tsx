@@ -3,7 +3,8 @@ import Frame from '$components/frame';
 import { getTasksFromApi } from './get-tasks-from-api';
 import TaskList, { Task } from './tasks';
 
-const TimeZone = ({ getTodos }: { getTodos?: boolean }) => {
+type TimeZoneProps = { getTodos?: boolean };
+const TimeZone = ({ getTodos }: TimeZoneProps) => {
   const startTime = useRef(Date.now());
   const [currentTime, setCurrentTime] = useState(Date.now());
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -14,7 +15,9 @@ const TimeZone = ({ getTodos }: { getTodos?: boolean }) => {
     const interval = setInterval(() => {
       setCurrentTime(Date.now());
     }, 1000);
-    if (getTodos) getTasksFromApi().then(setTasks);
+    if (getTodos) {
+      getTasksFromApi().then(setTasks);
+    }
     return () => clearInterval(interval);
   }, []);
 

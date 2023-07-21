@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { add } from './store/items-slice';
-import { useDispatch } from './store/hooks';
+import { useAppDispatch } from './store/index';
 
 const NewItem = () => {
   const [newItemName, setNewItemName] = useState('');
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   return (
     <form

@@ -4,7 +4,7 @@ it('should work', () => {
   expect(true).toBe(true);
 });
 
-test('works witn "test" as well', () => {
+test('works with "test" as well', () => {
   expect(false).not.toBe(true);
 });
 
@@ -22,6 +22,7 @@ test('works when returning a promise', () => {
 });
 
 // npx vitest --mode=development --run --reporter=verbose
+//npx vitest --mode=development --ui
 test.runIf(process.env.NODE_ENV === 'development')(
   'it should run in development',
   () => {

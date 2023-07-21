@@ -30,6 +30,6 @@
     "src/**/*.js",
     "src/**/*.jsx",
     "src/**/*.svelte"
-  ],
+, "src/examples/msw/node.ts.bak", "src/examples/msw/node.test.ts.bak"  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
