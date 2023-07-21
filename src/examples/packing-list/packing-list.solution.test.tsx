@@ -51,7 +51,7 @@ it('adds a new item to the unpacked item list when the clicking "Add New Item"',
   await user.click(addNewItemButton);
 
   expect(screen.getByLabelText('MacBook Pro')).not.toBeChecked();
-  
+
   expect(newItemInput).toHaveValue('');
   expect(addNewItemButton).toBeDisabled();
 });
@@ -68,11 +68,10 @@ it.skip('adds a new item to the unpacked item list when the clicking "Add New It
   await user.click(addNewItemButton);
 
   expect(screen.getByLabelText('MacBook Pro')).not.toBeChecked();
-  
+
   expect(newItemInput).toHaveValue('');
   expect(addNewItemButton).toBeDisabled();
 });
-
 
 //TestingLibraryElementError: Found multiple elements with the text of: MacBook Pro
 /*it('duplicated adds a new item to the unpacked item list when the clicking "Add New Item"', async () => {
@@ -109,7 +108,7 @@ it('removes an item when the remove button is clicked', async () => {
   await user.click(removeButton);
 
   expect(removeButton).not.toBeInTheDocument();
-  await waitFor(()=> expect(removeButton).not.toBeInTheDocument());
+  await waitFor(() => expect(removeButton).not.toBeInTheDocument());
 
   expect(removeButton).not.toBeInTheDocument();
   expect(item).not.toBeInTheDocument();
