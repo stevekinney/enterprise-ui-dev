@@ -1,3 +1,7 @@
+<aside style="margin-block: 1rem; padding: 1rem; border: 1px solid currentColor">
+  This fork contains workshop exercises from the course <a href="https://frontendmasters.com/courses/enterprise-ui-dev">Enterprise UI Development: Testing & Code Quality</a>.
+</aside>
+
 ![](assets/enterprise-user-interface-development.png)
 
 # Frontend Masters Course
