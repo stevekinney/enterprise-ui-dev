@@ -1,5 +1,18 @@
-import { render, screen, within } from 'test/utilities';
-import PackingList from '.';
+import { render as _render, screen, within } from 'test/utilities';
+import { Provider } from 'react-redux';
+import { PackingList } from '.';
+import { createStore } from './store';
+import { PropsWithChildren } from 'react';
+
+const render: typeof _render = (Component, options) => {
+  const store = createStore();
+
+  const Wrapper = ({ children }: PropsWithChildren) => {
+    return <Provider store={createStore()}>{children}</Provider>;
+  };
+
+  return _render(Component, { ...options, wrapper: Wrapper });
+};
 
 it('renders the Packing List application', () => {
   render(<PackingList />);
@@ -50,15 +63,16 @@ it('adds a new item to the unpacked item list when the clicking "Add New Item"',
   within(unpackedList).getByLabelText('Foo');
 });
 
-// Note: dependent on side effect from previous test
-it.skip('removes an item from the unpacked item list when the clicking "Remove"', async () => {
+it('removes an item from the unpacked item list when the clicking "Remove"', async () => {
   const { user } = render(<PackingList />);
   const field = screen.getByLabelText('New Item Name');
   const addButton = screen.getByRole('button', { name: 'Add New Item' });
   const unpackedList = screen.getByTestId('unpacked-items-list');
 
-  within(unpackedList).getByLabelText('Foo');
+  await user.type(field, 'Foo');
+  await user.click(addButton);
 
+  within(unpackedList).getByLabelText('Foo');
   const removeButton = screen.getByLabelText('Remove Foo');
 
   await user.click(removeButton);
