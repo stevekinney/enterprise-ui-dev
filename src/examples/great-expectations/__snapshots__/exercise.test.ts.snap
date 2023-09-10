@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Person > will throw a specific error message if you provide an empty string > fullName cannot be an empty string 1`] = `"fullName cannot be an empty string."`;
+
+exports[`Person > will throw a specific error message if you provide an empty string > test 1`] = `"fullName cannot be an empty string."`;
+
+exports[`Person > will throw a specific error message if you provide an empty string 1`] = `"fullName cannot be an empty string."`;
