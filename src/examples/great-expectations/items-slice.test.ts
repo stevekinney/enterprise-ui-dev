@@ -19,7 +19,9 @@ it('supports adding an item with the correct name', () => {
 it('prefixes ids with "item-"', () => {
   expect.hasAssertions();
   const result = reducer([], add({ name: 'iPhone' }));
-  expect(result[0].id).toMatch(/^item-/);
+  expect(result).toEqual([
+    expect.objectContaining({ id: expect.stringMatching(/^item-/) }),
+  ]);
 });
 
 it('defaults new items to a packed status of false', () => {
@@ -43,6 +45,8 @@ it('supports removing an item', () => {
   expect(result).not.toEqual([
     expect.objectContaining({ id: '1', name: 'iPhone' }),
   ]);
+  // or
+  expect(result).not.toContain(expect.objectContaining({ id: '1' }));
 });
 
 it('supports toggling an item', () => {
