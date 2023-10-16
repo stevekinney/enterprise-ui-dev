@@ -10,7 +10,7 @@
     "test:all": "vitest",
     "test:accessibility": "vitest accessibility --run",
     "coverage": "vitest --coverage --run",
-    "test": "echo \"Navigate into an example and run the tests from there!\" && exit 1",
+    "test": "vitest",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
@@ -25,7 +25,7 @@
   "homepage": "https://frontendmasters.com/courses/enterprise-ui-dev/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stevekinney/enterprise-ui-dev"
+    "url": "https://github.com/trend-albert-shala/enterprise-ui-dev"
   },
   "license": "MIT",
   "dependencies": {
