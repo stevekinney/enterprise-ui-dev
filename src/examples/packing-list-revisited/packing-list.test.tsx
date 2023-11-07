@@ -11,7 +11,7 @@ const render: typeof baseRender = (Component, options) => {
     return <Provider store={store}>{children}</Provider>;
   };
 
-  return baseRender(Component, Wrapper, { ...options });
+  return baseRender(Component, { wrapper: Wrapper, ...options });
 };
 
 it('renders the Packing List PackingList', () => {

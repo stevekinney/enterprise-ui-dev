@@ -18,18 +18,10 @@ import { render, RenderOptions } from '@testing-library/react';
 // };
 export const customRender = (
   ui: React.ReactElement,
-  Wrapper?: any,
-  options?: Omit<RenderOptions, 'wrapper'>,
+  options?: RenderOptions,
 ) => {
   const user = userEvent.setup();
-  let result;
-  console.log('Wrapper', Wrapper);
-  if (Wrapper != null) {
-    result = render(ui, { wrapper: Wrapper, ...options });
-  } else {
-    result = render(ui, options);
-  }
-
+  const result = render(ui, options);
   return {
     ...result,
     user,
