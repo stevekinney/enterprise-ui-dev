@@ -1,14 +1,40 @@
-import type { ReactElement } from 'react';
-import { render as renderComponent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import React, { PropsWithChildren, ReactElement } from 'react';
+import { render, RenderOptions } from '@testing-library/react';
 
-type RenderOptions = Parameters<typeof renderComponent>[1];
+//Custom Render - testing-library.com/docs/react-testing-library/setup#custom-render
+// import { ThemeProvider } from 'my-ui-lib';
+// import { TranslationProvider } from 'my-i18n-lib';
+// import defaultStrings from 'i18n/en-x-default';
 
-export * from '@testing-library/react';
+// const AllProviders = ({ children }: { children: React.ReactNode}) => {
+//   return (
+//     <ThemeProvider theme="light">
+//       <TranslationProvider messages={defaultStrings}>
+//         {children}
+//       </TranslationProvider>
+//     </ThemeProvider>
+//   );
+// };
+export const customRender = (
+  ui: React.ReactElement,
+  Wrapper?: any,
+  options?: Omit<RenderOptions, 'wrapper'>,
+) => {
+  const user = userEvent.setup();
+  let result;
+  console.log('Wrapper', Wrapper);
+  if (Wrapper != null) {
+    result = render(ui, { wrapper: Wrapper, ...options });
+  } else {
+    result = render(ui, options);
+  }
 
-export const render = (ui: ReactElement, options?: RenderOptions) => {
   return {
-    ...renderComponent(ui, options),
-    user: userEvent.setup(),
+    ...result,
+    user,
   };
 };
+export * from '@testing-library/react';
+
+export { customRender as render };
