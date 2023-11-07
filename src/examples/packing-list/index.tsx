@@ -20,7 +20,7 @@ export const PackingList = () => {
     </Frame>
   );
 };
-const ContainerPacking = ({ children }: { children: React.ReactNode }) => {
+const ContainerPacking = () => {
   return (
     <Provider store={store}>
       <PackingList />
