@@ -11,7 +11,13 @@ it('returns an empty array as the initial state', () => {
 });
 
 it('supports adding an item with the correct name', () => {
-  expect(reducer([], add({ name: 'iPhone' }))).toEqual([
+  expect(
+    reducer(
+      [{ id: '1', name: 'Lola', packed: false }],
+      add({ name: 'iPhone' }),
+    ),
+  ).toEqual([
+    expect.objectContaining({ name: 'Lola' }),
     expect.objectContaining({ name: 'iPhone' }),
   ]);
 });
