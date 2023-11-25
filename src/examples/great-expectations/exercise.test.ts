@@ -12,45 +12,45 @@ import { KanbanBoard } from '$lib/kanban-board';
  * toThrowError: https://vitest.dev/api/expect.html#tothrowerror
  */
 
-it.todo(
-  'should pass if the two numbers would add up correctly in a language other than JavaScript',
-  () => {
-    expect(0.2 + 0.1).toEqual(0.3);
-  },
-);
+it('should pass if the two numbers would add up correctly in a language other than JavaScript', () => {
+  expect(0.2 + 0.1).toBeCloseTo(0.3);
+});
 
 describe('createPerson', () => {
-  it.todo('should create an instance of a person', () => {
+  it('should create an instance of a person', () => {
     const person = createPerson('Ada Lovelace');
     expect.hasAssertions();
-    // Verify that person is an instance of a Person.
+    // Verify that person is an instance of Person.
+    expect(person).toBeInstanceOf(Person);
   });
 });
 
 describe('Kanban Board', () => {
-  it.todo('should include "Backlog" in board.statuses', () => {
+  it('should include "Backlog" in board.statuses', () => {
     const board = new KanbanBoard('Things to Do');
     expect.hasAssertions();
     // Verify that board.statuses contains "Backlog".
+    expect(board.statuses).toContain('Backlog');
   });
 
-  it.todo('should *not* include "Bogus" in board.statuses', () => {
+  it('should *not* include "Bogus" in board.statuses', () => {
     const board = new KanbanBoard('Things to Do');
     expect.hasAssertions();
     // Verify that board.statuses does not contain "Bogus".
+    expect(board.statuses).not.toContain('Bogus');
   });
 
-  it.todo(
-    'should include an added status in board.statuses using #addStatus',
-    () => {
-      const board = new KanbanBoard('Things to Do');
-      expect.hasAssertions();
-      // Use board.addStatus to add a status.
-      // Verify that the new status is—in fact—now in board.statuses.
-    },
-  );
+  it('should include an added status in board.statuses using #addStatus', () => {
+    const board = new KanbanBoard('Things to Do');
+    expect.hasAssertions();
+    // Use board.addStatus to add a status.
+    const newStatus = 'New Status';
+    board.addStatus(newStatus);
+    // Verify that the new status is—in fact—now in board.statuses.
+    expect(board.statuses).toContain(newStatus);
+  });
 
-  it.todo('should remove a status using #removeStatus', () => {
+  it('should remove a status using #removeStatus', async () => {
     const board = new KanbanBoard('Things to Do');
     expect.hasAssertions();
     // Use board.removeStatus to remove a status.
@@ -58,53 +58,58 @@ describe('Kanban Board', () => {
     // You can be clever or you can just assume "Backlog" is in board.statuses
     // by default.
 
+    const statusToRemove = 'Backlog';
+    await board.removeStatus(statusToRemove);
+
     // Verify that the status is no longer in in board.statuses.
+    expect(board.statuses).not.toContain(statusToRemove);
   });
 });
 
 describe('Person', () => {
-  it.todo('will create a person with a first name', () => {
+  it('will create a person with a first name', () => {
     const person = new Person('Madonna');
     expect.hasAssertions();
     // Verify that person.firstName is correct.
+    expect(person.firstName).toBe('Madonna');
   });
 
-  it.todo('will create a person with a first and last name', () => {
+  it('will create a person with a first and last name', () => {
     const person = new Person('Madonna Cicone');
     expect.hasAssertions();
     // Verify that person.lastName is correct.
+    expect(person.lastName).toBe('Cicone');
   });
 
-  it.todo('will create a person with a first, middle, and last name', () => {
+  it('will create a person with a first, middle, and last name', () => {
     const person = new Person('Madonna Louise Cicone');
     expect.hasAssertions();
     // Verify that person.middleName is correct.
+    expect(person.middleName).toBe('Louise');
   });
 
-  it.todo('will throw if you provide an empty string', () => {
+  it('will throw if you provide an empty string', () => {
+    const fn = () => {
+      new Person('');
+    };
+
+    expect.hasAssertions();
+    // Verify that function above throws.
+    expect(fn).toThrow('');
+  });
+
+  it('will throw a specific error message if you provide an empty string', () => {
+    const errorMessage = 'fullName cannot be an empty string';
+
     const fn = () => {
       new Person('');
     };
 
     expect.hasAssertions();
 
-    // Verify that function above throws.
+    // Verify that function above throws the error message above.
+    expect(fn).toThrow(errorMessage);
   });
-
-  it.todo(
-    'will throw a specific error message if you provide an empty string',
-    () => {
-      const errorMessage = 'fullName cannot be an empty string';
-
-      const fn = () => {
-        new Person('');
-      };
-
-      expect.hasAssertions();
-
-      // Verify that function above throws the error message above.
-    },
-  );
 
   it.todo('will add a friend', () => {
     const john = new Person('John Lennon');
