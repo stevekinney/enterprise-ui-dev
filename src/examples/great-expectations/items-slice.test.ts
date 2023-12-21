@@ -1,8 +1,8 @@
 import reducer, {
   add,
+  markAllAsUnpacked,
   remove,
   toggle,
-  markAllAsUnpacked,
   update,
 } from './items-slice';
 
@@ -10,14 +10,18 @@ it('returns an empty array as the initial state', () => {
   expect(reducer(undefined, { type: 'noop' })).toEqual([]);
 });
 
-it.todo('supports adding an item with the correct name', () => {
+it('supports adding an item with the correct name', () => {
   expect.hasAssertions();
   const result = reducer([], add({ name: 'iPhone' }));
+  expect(result).toEqual([expect.objectContaining({ name: 'iPhone' })]);
 });
 
-it.todo('prefixes ids with "item-"', () => {
+it('prefixes ids with "item-"', () => {
   expect.hasAssertions();
   const result = reducer([], add({ name: 'iPhone' }));
+  expect(result).toEqual([
+    expect.objectContaining({ id: expect.stringMatching(/^item-/) }), //check for string in the beginning of id
+  ]);
 });
 
 it.todo('defaults new items to a packed status of false', () => {
