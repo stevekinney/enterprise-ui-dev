@@ -6,6 +6,7 @@ on:
   pull_request:
     branches: [main]
 
+
 jobs: # Things that should be done
   build-and-test:
     runs-on: ubuntu-latest
@@ -16,3 +17,4 @@ jobs: # Things that should be done
         uses: actions/setup-node@v3
       - run: npm ci #  
       - run: npm test
+
