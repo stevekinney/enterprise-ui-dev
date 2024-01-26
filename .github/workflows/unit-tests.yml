@@ -1,0 +1,19 @@
+name: Run unit tests
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: setup node
+        uses: actions/setup-node@v2
+      - name: Install deps
+        run: npm ci
+      - name: Run unit tests
+        run: npm test
+```
