@@ -24,4 +24,10 @@ it('include cool computer scientists by virtue of them being in the club', () =>
   addToCoolKidsClub(createComputerScientist('Ada', 'Lovelace'), people);
   addToCoolKidsClub(createComputerScientist('Annie', 'Easley'), people);
   addToCoolKidsClub(createComputerScientist('Dorothy', 'Vaughn'), people);
+
+  for (const person of people) {
+    expect(person).toEqual(
+      expect.objectContaining({ isCool: expect.any(Boolean) }),
+    );
+  }
 });
