@@ -1,4 +1,4 @@
-name: Unit Tests
+name: Build And Test
 
 on:
   push:
@@ -7,12 +7,26 @@ on:
     branches: [main]
 
 jobs:
-  build-and-test:
+  checkout_and_build:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
         uses: actions/setup-node@v3
-      - run: npm ci
-      - run: npm test
+
+      - name: Install Dependencies
+        run: npm ci
+  build:
+    runs-on: ubuntu-latest
+    needs: checkout_and_build
+    steps:
+      - name: Build
+        run: npm run build
+  test:
+    runs-on: ubuntu-latest
+    needs: checkout_and_build
+    steps:
+      - name: Test
+        run: npm run test
