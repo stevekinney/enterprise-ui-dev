@@ -33,9 +33,11 @@ jobs:
   coverage:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout and Setup node
-        uses: ./.github/actions/checkout-and-setup
-      - run: npm test -- --coverage
+      - uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
       - uses: actions/upload-artifact@v3
         name: Archive coverage report
         with:
