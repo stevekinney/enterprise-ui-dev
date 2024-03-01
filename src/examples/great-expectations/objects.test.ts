@@ -1,5 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
+// Only passes if ===. They are references to the same object in memory
 describe('toBe', () => {
   test.fails('objects should not be strictly equal', () => {
     expect({ a: 1 }).toBe({ a: 1 });
@@ -14,6 +15,7 @@ describe('toBe', () => {
   });
 });
 
+// toEqual is a deep comparison. It will compare the values of the objects and arrays
 describe('toEqual', () => {
   test('similar objects should pass with #toEqual', () => {
     expect({ a: 1 }).toEqual({ a: 1 });
