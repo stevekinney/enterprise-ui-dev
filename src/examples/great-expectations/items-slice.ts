@@ -7,6 +7,8 @@ export type Item = {
   packed: boolean;
 };
 
+// Temp
+
 const initialState: Item[] = [];
 
 const itemsSlice = createSlice({
