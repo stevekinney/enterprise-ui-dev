@@ -63,3 +63,5 @@ Okay, so what's going on here:
 - Right now `build-and-test` only tests. Add a step that runs `npm run build` to the action
 - **Bonus 1:**: Add a name to the step where we check out the repository.
 - **Bonus 2:**: Run `npm run build` in parallel with `npm test`.
+
+!!!New line to test the script in GITHUB.!!!
