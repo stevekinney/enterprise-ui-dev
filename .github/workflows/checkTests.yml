@@ -7,13 +7,19 @@ on:
     branches: [main]
 
 jobs:
-  build-and-test:
+  unit-test:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
       - name: Setup Node
         uses: actions/setup-node@v3
       - run: npm ci
       - run: npm test
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+      - run: npm ci
       - run: npm run build
