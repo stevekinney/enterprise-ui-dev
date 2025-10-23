@@ -1,0 +1,12 @@
+name: Frontend CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: unit_test
+      - run: npm test
