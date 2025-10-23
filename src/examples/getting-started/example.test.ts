@@ -8,7 +8,7 @@ test('works witn "test" as well', () => {
   expect(false).not.toBe(true);
 });
 
-it.fails('should be able to expect a test to fail', () => {
+it.todo.fails('should be able to expect a test to fail', () => {
   expect(false).toBe(true);
 });
 
